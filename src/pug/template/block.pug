@@ -1,0 +1,58 @@
+include module.pug
+
+mixin bl(root, data = {})
+	-
+		var preffix = data.preffix != null ? data.preffix : 'b'
+
+		var root = preffix ? preffix + '-' + root : root
+
+		var b = data.b != null ? data.b : ''
+		var e = data.e != null ? data.e : ''
+		var m = data.m != null ? data.m : ''
+		var c = data.c != null ? data.c : 'block'
+		var t = data.t != null ? data.t : 'section'
+
+		b = merge(b, c)
+
+	mixin el(element, args = {})
+		-
+			var elE = args.e != null ? args.e : ''
+			var elB = args.b != null ? args.b : ''
+			var elT = args.t != null ? args.t : 'div'
+			var elM = args.m != null ? args.m : ''
+			var ext = args.ext != null ? args.ext : false
+
+			if(ext) elE = merge(elE, b)
+
+		+e(element, {b: elB, e: elE, m: elM, t: elT})&attributes(attributes)
+			block
+
+	mixin blockTitle
+		+b('heading', {e: merge(b, '&:heading'), m: 'block', t: 'h2'})&attributes(attributes)
+			block
+	mixin pageTitle
+		+b('heading', {e: merge(b, '&:heading'), m: 'page', t: 'h1'})&attributes(attributes)
+			block
+	mixin blockDscr
+		+el('dscr', {e: b})&attributes(attributes)
+			block
+	mixin grid
+		+el('inner', {e: b})&attributes(attributes)
+			block
+
+	+b(root, {b: b, e: e, m: m}, t)&attributes(attributes)
+		if(data.grid != false && data.grid != true)
+			+grid
+				block
+		else 
+			block
+
+mixin popup(root, data = {})
+	-	
+		data.preffix = 'p'
+		data.c = 'popup'
+	mixin close
+		+el('close', {ext: true})(title='Закрыть')&attributes(attributes).closeTrigger
+			block
+	+bl(root, data)&attributes(attributes)
+		block

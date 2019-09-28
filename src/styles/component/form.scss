@@ -1,0 +1,23 @@
+.form {
+	&__input {
+		padding: 16px 24px;
+		padding: 23px 24px 21px;
+		color: $color-text;
+		border: none;
+		background-color: $color-bg;
+		transition: all 0.2s ease 0s;
+		&::placeholder {
+			color: #515151;
+		}
+		&:focus,
+		&:hover {
+			background-color: #fff;
+		}
+	}
+	&__checkbox {
+		margin-top: 15px;
+	}
+	&__fz {
+		margin-top: 35px;
+	}
+}

@@ -1,0 +1,20 @@
+@import 'slick-carousel/slick/slick.css';
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+@import 'base/base';
+@import 'normalize.css';
+
+@import 'base/fonts';
+
+@import 'component/trigger';
+@import 'component/form';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'block/block';
+@import 'block/popup';
+
+@import 'pages/page';

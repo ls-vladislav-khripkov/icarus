@@ -1,0 +1,11 @@
+<svg width="31" height="40" viewBox="0 0 31 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path class="logo__part logo__part--1" d="M0.652477 37.6646L0 39.9634H8.25445L8.5639 38.8234H21.6274L21.9369 39.9634H30.1924L29.5388 37.6646H0.652477Z" fill="#fff"></path>
+	<path class="logo__part logo__part--2" d="M1.87462 32.9517L1.20703 35.2978H28.9843L28.3184 32.9517H1.87462Z" fill="#fff"></path>
+	<path class="logo__part logo__part--3" d="M3.0942 28.24L2.42773 30.5872H27.7618L27.0948 28.24H3.0942Z" fill="#fff"></path>
+	<path class="logo__part logo__part--4" d="M4.31881 23.5667L3.65234 25.9128H11.7445L12.0646 24.7339H18.1294L18.4495 25.9128H26.5422L25.8763 23.5667H4.31881Z" fill="#fff"></path>
+	<path class="logo__part logo__part--5" d="M5.53951 18.8928L4.87305 21.2389H12.9115L13.231 20.0628H16.9623L17.2819 21.2389H25.3209L24.6544 18.8928H5.53951Z" fill="#fff"></path>
+	<path class="logo__part logo__part--6" d="M6.76022 14.1438L6.09375 16.4899H14.0774L14.3862 15.3549H15.8065L16.1137 16.4899H24.0979L23.4325 14.1438H6.76022Z" fill="#fff"></path>
+	<path class="logo__part logo__part--7" d="M7.98092 9.46997L7.31445 11.8172H22.8765L22.2095 9.46997H7.98092Z" fill="#fff"></path>
+	<path class="logo__part logo__part--8" d="M9.20358 4.72046L8.53711 7.06713H21.6555L20.9896 4.72046H9.20358Z" fill="#fff"></path>
+	<path class="logo__part logo__part--9" d="M10.4237 0L9.75781 2.34611H20.4336L19.7671 0H10.4237Z" fill="#fff"></path>
+</svg>

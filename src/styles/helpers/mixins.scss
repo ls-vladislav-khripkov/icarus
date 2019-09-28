@@ -1,0 +1,108 @@
+@mixin col($options: ()) {
+	@if (if(map-get($options, mg), 1, 0) == 1) {
+		@media screen and (min-width: 2200px) {
+			@if map-get($options, mg) == 100% {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, mg)};
+			}
+		}
+	}
+	@if (if(map-get($options, md), 1, 0) == 1) {
+		@media screen and (min-width: 1170px) {
+			@if map-get($options, md) == 100% {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, md)};
+			}
+		}
+	}
+	@if (if(map-get($options, mtl), 1, 0) == 1) {
+		@media screen and (min-width: 980px) and (max-width: 1365px) {
+			@if map-get($options, mtl) == 100% {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, mtl)};
+			}
+		}
+	}
+	@if (if(map-get($options, mtp), 1, 0) == 1) {
+		@media screen and (min-width: 768px) and (max-width: 979px) {
+			@if map-get($options, mtp) == 100% {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, mtp)};
+			}
+		}
+	}
+	@if (if(map-get($options, msl), 1, 0) == 1) {
+		@media screen and (min-width: 480px) and (max-width: 767px) {
+			@if map-get($options, msl) == 100% {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, msl)};
+			}
+		}
+	}
+	@if (if(map-get($options, msp), 1, 0) == 1) {
+		@media screen and (min-width: 1px) and (max-width: 479px) {
+			@if (map-get($options, msp) == 100%) {
+				width: 100%;
+			} @else {
+				lost-column: #{map-get($options, msp)};
+			}
+		}
+	}
+}
+
+@function grid-col($col, $cols: 12, $needGutter: false) {
+	$def: 1;
+	$gutterWidth: $grid-gutter * 11;
+	$gridWithoutGutter: $grid-width - $gutterWidth;
+	$colWidth: $gridWithoutGutter / 12;
+	$gutterSub: 1;
+
+	@if ($needGutter) {
+		$gutterSub: 0;
+	}
+	@return ($colWidth * $col) + ($grid-gutter * ($col - $gutterSub));
+}
+
+
+@mixin row {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+@mixin grid {
+	width: 100%;
+	max-width: $grid-width;
+	margin: auto;
+	box-sizing: border-box;
+	@media (--mtl) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+@mixin link {
+	color: $color-style;
+	text-decoration-color: rgba($color-style, .4);
+	transition: all 0.2s ease 0s;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@mixin title {
+	font-family: $font-title;
+	font-weight: 350;
+	line-height: 1.05;
+}
+
+@mixin uppercase {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}

@@ -1,0 +1,110 @@
+.button {
+	$m: &;
+	@include uppercase;
+	position: relative;
+	display: inline-block;
+	line-height: 1;
+	font-size: 18px;
+	font-weight: 400;
+	border-radius: 2px;
+	padding: 23px 40px 19px;
+	min-width: 300px;
+	color: $color-text;
+	text-align: center;
+	user-select: none;
+	background-color: $color-accent;
+	box-sizing: border-box;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 0;
+	transition: all 0.2s ease 0s;
+	@media (--md) {
+		font-size: 14px;
+		padding: 18px 20px 16px;
+	};
+	@media (--msl) {
+		font-size: 18px;
+		padding: 23px 40px 19px;
+	}
+	&:hover {
+		background-color: $color-hover;
+	}
+}
+
+.checkbox {
+	$m: &;
+	display: flex;
+	align-items: baseline;
+	cursor: pointer;
+	&:hover {
+		&__toggle {
+			background-color: $color-accent;
+		}
+	}
+
+	&__input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		&:checked + #{$m}__toggle {
+			&::before {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+	}
+	&__toggle {
+		position: relative;
+		font-size: 0;
+		width: 12px;
+		height: 12px;
+		flex-shrink: 0;
+		margin-right: 13px;
+		border-radius: 2px;
+		background-color: #fff;
+		box-sizing: border-box;
+		transition: background-color 0.2s ease 0s;
+		&--border {
+			border: 1px solid #000;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 50%;
+			height: 50%;
+			background-color: #000;
+			transform: translate(-50%, -50%) scale(0);
+			transform-origin: center;
+			transition: all 0.2s ease 0s;
+		}
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		@media (--msl) {
+			justify-content: center;
+			text-align: left;
+		}
+	}
+	&__text {
+		user-select: none;
+		font-size: 18px;
+		text-align: left;
+		@media (--md) {
+			font-size: 14px;
+		}
+		@media (--msl) {
+			font-size: 16px;
+		}
+	}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

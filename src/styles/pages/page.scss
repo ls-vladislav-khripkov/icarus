@@ -1,0 +1,14 @@
+.page {
+    &__inner {
+		padding-top: 85px;
+		@media (--msl) {
+			padding-top: 59px;
+		}
+	}
+	&__upper {
+		margin-bottom: 70px;
+	}
+    &__footer {
+        margin-top: auto;
+    }
+}

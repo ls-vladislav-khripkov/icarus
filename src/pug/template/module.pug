@@ -1,0 +1,15 @@
+-
+	function push(array1, array2) {
+		if(!Array.isArray(array1)) {
+			array1 = [array1]
+		}
+		for(el in array1) {
+			array2.push(array1[el])
+		}
+		return array2
+	}
+
+	function merge(array1, array2) {
+		var array3 = push(array1, []);
+		return push(array2, array3);
+	}

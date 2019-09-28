@@ -1,0 +1,45 @@
+doctype html
+
+include ../../../node_modules/bempug/index
+include ../template/block.pug
+
+-
+	var pageBlock = 'front'
+	var hasSidebar = false
+
+	var pageTitle = 'front-page'
+
+block vars
+
+block storage
+
+-
+	var pageClasses = (pageBlock !== 'front' ? 'inner-page' : '', hasSidebar ? 'sidebar-page' : '', 'page')
+	var pageBlock = pageBlock + '-page'
+
+html(lang="ru")
+	head
+		title= pageTitle
+		meta(charset="UTF-8")
+		link(rel="stylesheet" href="css/styles.css")
+		link(rel="icon" href="assets/favicon.png" type="image/png")
+		link(rel="preload" href="https://southmedia.ru/dev/scripts/validation.js" as="script")
+		meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=0")
+		meta(name="description" content=pageTitle)
+		meta(name="og:title" content=pageTitle)
+		meta(name="og:type" content=pageTitle)
+		meta(property="og:image" content="./assets/og.jpg")
+	+b(pageBlock, {b: pageClasses, t: 'body'}).preload
+		+e('inner', {e: pageClasses})
+			+b('header', {e: pageClasses, t: 'header'})(role='havigation')
+				include header
+			+e('main', {e: pageClasses, t: 'main'})(role='contentinfo')
+				block content
+			+e('popup', {e: pageClasses})
+				block popup
+			+b('footer', {e: pageClasses, t: 'footer'})(role='footer')
+				include footer
+	script(defer src="https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU&mode=release")
+	script(defer src="js/libs.js")
+	script(defer src="https://southmedia.ru/dev/scripts/validation.js")
+	script(defer src="js/main.js")

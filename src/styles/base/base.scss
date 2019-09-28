@@ -1,0 +1,153 @@
+* {
+	outline: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: $font-text;
+	font-size: 20px;
+	font-weight: 300;
+	color: $color-text;
+	line-height: 1.5;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+	&.preload {
+		* {
+			transition-duration: 0s;
+		}
+	}
+	.-popup & {
+		overflow: hidden;
+		height: 100%;
+	}
+}
+
+h1, h2, h3 {
+	@include title;
+	margin-top: 0;
+	font-size: 60px;
+	margin-bottom: 20px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+td {
+	border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+button {
+	border: none;
+}
+
+
+a {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+}
+
+img,
+picture {
+	width: 100%;
+	height: auto;
+	display: block;
+	resize: none;
+}
+
+object {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+video {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+input, textarea {
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	border: none;
+	border-radius: 0px;
+	width: 100%;
+	max-width: 100%;
+	line-height: 1;
+	min-width: 0;
+	resize: none;
+	-webkit-appearance: none;
+	box-sizing: border-box;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+button {
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.iScrollIndicator {
+	display: none !important;
+}
+
+strong {
+	font-weight: 700;
+}
+
+* {
+	outline: none;
+}
+
+sup {
+	top: -.45em;
+    font-size: 65%;
+}
+
+::selection {
+	color: #fff;
+	background-color: $color-style;
+}
+
+:target {
+	padding-top: 120px;
+	margin-top: -120px;
+}

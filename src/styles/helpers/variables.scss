@@ -1,0 +1,26 @@
+$color-style: #006778;
+$color-accent: #FFCEA5;;
+$color-hover: #FFBC8C;
+$color-title: #000;
+$color-text: #000;
+
+$color-bg: #FBF8F8;
+
+$border-radius: 6px;
+
+$font-title: 'CodecCold', sans-serif;
+$font-text: 'CodecCold';
+$font-alt: 'CodecCold';
+
+$grid-width: 1400px;
+$grid-gutter: 40px;
+
+@custom-media --md (max-width: calc(#{$grid-width} + 30px));
+@custom-media --mtl (max-width: 1169px);
+@custom-media --mtp (max-width: 979px);
+@custom-media --msl (max-width: 768px);
+@custom-media --msp (max-width: 479px);
+
+@lost flexbox flex;
+@lost gutter 40px;
+@lost rounder 100;
